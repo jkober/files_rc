@@ -1,6 +1,7 @@
 #!/bin/bash
 rc_nameRegistro=registroc
-webserver=https://www.santafe.gob.ar/documentos/rcivil
+#webserver=https://www.santafe.gob.ar/documentos/rcivil
+webserver=https://raw.githubusercontent.com/jkober/files_rc/main/linux
 #webserver=10.7.1.196/~desarrollo/documentos/rcivil
 escritorio=$HOME/Escritorio
 accesoDirecto=$escritorio/firma2.desktop
