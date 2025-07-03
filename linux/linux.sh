@@ -1,4 +1,5 @@
 #!/bin/bash
+#2025-07-03a
 rc_nameRegistro=registroc
 #webserver=https://www.santafe.gob.ar/documentos/rcivil
 webserver=https://raw.githubusercontent.com/jkober/files_rc/main/linux
