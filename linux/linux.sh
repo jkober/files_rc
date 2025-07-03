@@ -1,6 +1,7 @@
 #!/bin/bash
-#2025-07-03abc
+#2025-07-03_12_23
 rc_nameRegistro=registroc
+nocache=$(date +%s)
 #webserver=https://www.santafe.gob.ar/documentos/rcivil
 webserver=https://raw.githubusercontent.com/jkober/files_rc/main/linux
 #webserver=10.7.1.196/~desarrollo/documentos/rcivil
@@ -31,7 +32,7 @@ fi
 #--------------------------------------------------------------------------------------------
 if [ ! -f $HOME/rcdigital-linux/linux.sh ]
 then
-	wget $webserver/rcdigital-linux.zip
+	wget -O rcdigital-linux.zip $webserver/rcdigital-linux.zip?cache=$nocache
 	if [ -f rcdigital-linux.zip ]
 	then	
 		unzip -o rcdigital-linux.zip
@@ -47,7 +48,7 @@ else
 		then
 			echo version actaulizada rcdigital-linux
 		else
-			wget $webserver/rcdigital-linux.zip
+			wget -O rcdigital-linux.zip $webserver/rcdigital-linux.zip?cache=$nocache
 			if [ -f rcdigital-linux.zip ]
 			then	
 				unzip -o rcdigital-linux.zip
@@ -64,7 +65,7 @@ fi
 #--------------------------------------------------------------------------------------------
 if [ ! -f $HOME/linux-java/AppScanners.jar ]
 then
-	wget $webserver/linux-java.zip
+	wget -O linux-java.zip $webserver/linux-java.zip?cache=$nocache
 	if [ -f linux-java.zip ]
 	then	
 		unzip -o linux-java.zip
@@ -80,7 +81,7 @@ else
 		then
 			echo version actaulizada rcdigital-java
 		else
-			wget $webserver/linux-java.zip
+			wget -O linux-java.zip $webserver/linux-java.zip?cache=$nocache
 			if [ -f linux-java.zip ]
 			then	
 				unzip -o linux-java.zip
@@ -111,7 +112,7 @@ then
 fi
 if [ ! -f $HOME/$rc_nameRegistro/rcivil.txt ]
 then
-	wget $webserver/rcivil.zip
+	wget -O rcivil.zip $webserver/rcivil.zip?cache=$nocache
 	if [ ! -f rcivil.zip ] 
 	then
 		echo "No se puedo bajar el zip errore importante"
@@ -129,7 +130,7 @@ else
 	then
 		echo version actaulizada rcdigital-linux
 	else
-		wget $webserver/rcivil.zip
+		wget -O rcivil.zip $webserver/rcivil.zip?cache=$nocache
 		if [ -f rcivil.zip ]
 		then	
 			unzip -o rcivil.zip
@@ -148,7 +149,7 @@ fi
 # inicio 2018-23-03 
 if [ ! -f $HOME/$rc_nameRegistro/rcivilup.txt ]
 then
-	wget $webserver/rcivilup.zip
+	wget -O rcivilup.zip $webserver/rcivilup.zip?cache=$nocache
 	if [ ! -f rcivilup.zip ] 
 	then
 		echo "No se puedo bajar el zip errore importante rcivilup"
@@ -165,7 +166,7 @@ else
 	then
 		echo version actaulizada rcdigital-linux
 	else
-		wget $webserver/rcivilup.zip
+		wget -O rcivilup.zip $webserver/rcivilup.zip?cache=$nocache
 		if [ -f rcivilup.zip ]
 		then	
 			unzip -o rcivilup.zip
