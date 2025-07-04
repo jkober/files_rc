@@ -1,5 +1,5 @@
 #!/bin/bash
-#2025-07-03_12_23
+#2025-07-03_12_29
 rc_nameRegistro=registroc
 nocache=$(date +%s)
 #webserver=https://www.santafe.gob.ar/documentos/rcivil
@@ -157,7 +157,9 @@ then
 		exit 0
 	fi
 	unzip -o rcivilup.zip 
-	mv $rc_nameRegistro $HOME
+	[ -d "$HOME/$rc_nameRegistro" ] || mkdir -p "$HOME/$rc_nameRegistro"
+	cp -a $rc_nameRegistro/. "$HOME/$rc_nameRegistro/"
+	rm -rf $rc_nameRegistro	
 else
 	wget $webserver/rcivilup.txt
 	versionLunux1=`cat rcivilup.txt`
@@ -169,8 +171,11 @@ else
 		wget -O rcivilup.zip $webserver/rcivilup.zip?cache=$nocache
 		if [ -f rcivilup.zip ]
 		then	
-			unzip -o rcivilup.zip
-			mv -f $rc_nameRegistro $HOME
+			unzip -o rcivilup.zip 
+			[ -d "$HOME/$rc_nameRegistro" ] || mkdir -p "$HOME/$rc_nameRegistro"
+			cp -a $rc_nameRegistro/. "$HOME/$rc_nameRegistro/"
+			rm -rf $rc_nameRegistro	
+
 		fi
 	fi
 fi
