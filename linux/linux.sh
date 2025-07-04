@@ -187,7 +187,7 @@ then
 else
 	## ejecuta en segundo plano
 	ps -ef | awk '/AppScanners.jar/ && !/awk/ {print $2}'| xargs -r kill -9
-	java -jar $HOME/linux-java/AppScanners.jar &
+	java -Djavax.accessibility.assistive_technologies= -jar $HOME/linux-java/AppScanners.jar &
 fi
 ## ejecuta en segundo plano
 #ps -ef | awk '/AppScanners.jar/ && !/awk/ {print $2}'| xargs -r kill -9
